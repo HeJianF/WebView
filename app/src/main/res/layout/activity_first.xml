@@ -19,5 +19,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClick"
-        android:text="Android JS" />
+        android:text="Android JS"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_main3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="JsBridge"
+        android:textAllCaps="false" />
 </LinearLayout>

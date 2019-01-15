@@ -3,31 +3,45 @@
 <head>
     <meta charset="utf-8">
     <title>he Jianfeng</title>
+</head>
+<body>
+<script>
 
-    <script>
         function callJS(){
             alert("Android 调用JS的callJS方法");
         }
 
-        function callAndroid(){
-            <!--test.hello("js调用了android中的hello方法");-->
+        function callAndroid1(){
+            test.hello("js调用了android中的hello方法");
+        }
+
+        function callAndroid2(){
             document.location = "js://webView?arg1=111&arg2=222";
         }
 
         function returnResult(result){
-            alert("result is" + result);
+            alert("result is " + result);
         }
 
         function clickPrompt(){
             var result = prompt("js://demo?arg1=111&arg2=222");
-            alert("demo" + result);
+            alert("demo " + result);
         }
 
-    </script>
-</head>
+</script>
 
-    <body>
-        <button type="button" id="button1" onclick="callAndroid()">点击调用Android代码</button>
-        <button type="button" id="button2" onclick="clickPrompt()">prompt</button>
-    </body>
+<div>
+    <button type="button" id="button1" onclick="callAndroid1()">调用Android代码1</button>
+</div>
+
+<div>
+    <button type="button" id="button2" onclick="callAndroid2()">调用Android代码2</button>
+</div>
+
+<div>
+    <button type="button" id="button3" onclick="clickPrompt()">prompt</button>
+</div>
+
+</body>
+
 </html>
