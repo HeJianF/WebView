@@ -62,8 +62,8 @@ public class JSActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 Uri uri = Uri.parse(url);
-                if (uri.getScheme().equals("js")) {
-                    if (uri.getAuthority().equals("webView")) {
+                if ("js".equals(uri.getScheme())) {
+                    if ("webView".equals(uri.getAuthority())) {
                         Log.d("JSActivity", "shouldOverrideUrlLoading: js调用了Android的方法");
                         Set<String> parameterNames = uri.getQueryParameterNames();
                         for (String parameterName : parameterNames) {
@@ -81,8 +81,8 @@ public class JSActivity extends AppCompatActivity {
             @Override
             public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
                 Uri uri = Uri.parse(message);
-                if (uri.getScheme().equals("js")) {
-                    if (uri.getAuthority().equals("demo")) {
+                if ("js".equals(uri.getScheme())) {
+                    if ("demo".equals(uri.getAuthority())) {
                         Log.d("JSActivity", "onJsAlert: js调用了Android的方法");
                         result.confirm("js调用Android的方法成功了");
                     }
@@ -101,7 +101,6 @@ public class JSActivity extends AppCompatActivity {
                 return super.onJsConfirm(view, url, message, result);
             }
         });
-
     }
 
     public void onClick(View view) {
